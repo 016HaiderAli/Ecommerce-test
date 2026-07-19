@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+}
+
+@variant dark (@media (prefers-color-scheme: dark));
+
+@layer base {
+  body {
+    @apply m-0 antialiased;
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  }
+}
