@@ -1,4 +1,4 @@
-# OpenCode E-commerce Storefront
+# E-commerce Storefront
 
 A React + TypeScript + Vite storefront demo built with Tailwind CSS v4 and PocketBase integration.
 
