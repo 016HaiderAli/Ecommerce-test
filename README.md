@@ -1,75 +1,59 @@
-# React + TypeScript + Vite
+# OpenCode E-commerce Storefront
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite storefront demo built with Tailwind CSS v4 and PocketBase integration.
 
-Currently, two official plugins are available:
+## What this project is
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This repository contains an e-commerce storefront demo application. It uses a state-based tab navigation layout rather than client-side routing, and it is built to demonstrate a product catalog experience, wishlist management, cart handling, checkout flow, and a manual payment upload option.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Product browsing with category filters
+- Wishlist support for favoriting and unfavoriting products
+- Shopping cart with quantity controls and price calculation
+- Discount code support (`SAVE10`, `WELCOME20`)
+- Checkout form with order submission
+- Payment options: Cash on Delivery (COD) and Bank Transfer
+- Manual bank transfer screenshot upload
+- PocketBase client SDK integration for orders, users, and payment screenshots
+- Responsive UI with Tailwind CSS and reusable React components
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite 8
+- Tailwind CSS v4
+- PocketBase client SDK
+- React Hook Form + Zod
+- React Dropzone
+- Lucide React icons
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Clone the repository
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/<your-username>/opencode-ecommerce-test.git
+cd opencode-ecommerce-test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+### Run the app
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal to view the storefront.
+
+## Notes
+
+- The project uses `tsconfig.app.json` and `tsconfig.node.json` for TypeScript configuration.
+- No test framework is included currently.
+- PocketBase server setup is not included; the client defaults to `http://127.0.0.1:8090` if no environment variable is provided.
